@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-void add(int a , int b) {
-    printf("%d", (a + b));
+void add(double a , double b) {
+    printf("%lf\n", (a + b));
 }
 
-void sub(int a, int b) {
-    printf("%d", (a - b));
+void sub(double a, double b) {
+    printf("%lf\n", (a - b));
 }
 
-void div(int a, int b) {
-    printf("%d", (a / b));
+void div(double a, double b) {
+    printf("%lf\n", (a / b));
     
 }
 
-void mul(int a, int b) {
-    printf("%d", (a * b));
+void mul(double a, double b) {
+    printf("%lf\n", (a * b));
 }
 
 
@@ -23,14 +23,14 @@ void mul(int a, int b) {
 int main() {
 
     printf("num1: ");
-    int num1;
-    scanf("%d", &num1);
+    double num1;
+    scanf("%lf", &num1);
     printf("Operator: ");
     char operator;
     scanf(" %c", &operator);
     printf("num1: ");
-    int num2;
-    scanf("%d", &num2);
+    double num2;
+    scanf("%lf", &num2);
 
     switch(operator) {
         case '+' :
@@ -50,11 +50,10 @@ int main() {
         break;  
 
         default:
-        printf("invalid operator.");
+        printf("invalid operator: '%c' \n", operator);
         return 1;
     }
 
 
     return 0;
 }
-
