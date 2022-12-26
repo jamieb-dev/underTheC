@@ -1,0 +1,5 @@
+print bar
+
+repeat for length of array
+    char[i] = " "
+    char[i-1] = "#"
