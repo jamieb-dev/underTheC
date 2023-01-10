@@ -1,3 +1,13 @@
+// TASKS
+// Create a bar that increases up to 10
+// Start with [----------] and replace each - with a # incrementally
+
+
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -6,28 +16,30 @@
 // prototypes
 void refresh(void);
 
+
 char *bar;
 
 int main(void){
+    bar = malloc(50);
+    strcpy(bar, "[-------------------]");
+    int barLen = ((sizeof(bar)) / (sizeof(char)));
+    //printf("%s\n", bar);
+    /*for(int i = 0; i < barLen; i++){
+        printf("");
+        }
+        */
+    for(int i = 1; i < barLen; i++){
+        strcpy(&bar[i], "#");
 
-bar = malloc(25);
-strcpy(bar, "####################");
-int barLen = ((sizeof(bar)) / (sizeof(char)));
-printf("%s\n", bar);
-for(int i = 0; i < 21; i++){
-    printf("");
-}
-for(int i = 0; i < barLen; i++){
-    strcpy(&bar[i], "#");
-
-    refresh();
-
-
+        refresh();
 
 
-}
-printf("%s\n", bar);
-free(bar);
+
+
+    }
+
+   // printf("%s\n", bar);
+    free(bar);
 return 0;}
 
 void refresh(void){
